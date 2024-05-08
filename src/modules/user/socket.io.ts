@@ -31,13 +31,7 @@ export class WebsocketGateway {
   @SubscribeMessage("Connect")
   handleConnect(client: Socket, user: User): void {
     user.socketid = client.id;
-    if(this.users){
-      if(this.users.find(u => u.id == user.id)) {
-        this.users.find(u => u.id == user.id).socketid = client.id;
-      } else {
-        this.users.push(user);
-      }
-    }
+    this.users.push(user);
     console.log(`xd ${user.name} (${user.id}) connected`);
   }
 
