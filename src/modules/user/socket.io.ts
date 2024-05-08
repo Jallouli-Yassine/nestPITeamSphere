@@ -49,6 +49,7 @@ export class WebsocketGateway {
     user.verifiedAccount = true;
 
     console.log(user);
+    console.log(this.users);
 
 
         user.socketid=this.users.find(u => u.id == user.id).socketid
