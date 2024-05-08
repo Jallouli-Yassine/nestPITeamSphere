@@ -316,7 +316,7 @@ export class UserService extends BaseService<User> {
     user.passwordResetExpires = new Date(Date.now() + 600000); // 1 min
     await user.save();
     //console.log(user.firstName)
-    const resetLink = `project-management-react-js-z3gu.vercel.app/newPassword?token=${token}`;
+    const resetLink = `https://project-management-react-js-z3gu.vercel.app/newPassword?token=${token}`;
 
     await this.emailService.sendPasswordReset(user, resetLink, randomCode)
   }
