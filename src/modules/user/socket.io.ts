@@ -47,7 +47,7 @@ export class WebsocketGateway {
     user.statusAccount = 1;
     user.verifiedAccount = true;
 
-    console.log(this.users)
+    console.log(this.user)
     if(this.users){
 
       if(this.users.find(u => u.id == user.id)) {
