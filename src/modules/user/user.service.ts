@@ -155,7 +155,7 @@ export class UserService extends BaseService<User> {
     try {
       const user = await super.findOneForSave(id, ['settings', 'role', 'teams']);
       const userSettings = user.settings;
-
+      console.log(user);
 
       userSettings.statusAccount = 1;
       userSettings.verifiedAccount = true;
