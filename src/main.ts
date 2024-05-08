@@ -5,7 +5,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableCors({
-    origin: 'http://localhost:5173', // Allow requests from this origin
+    origin: 'https://project-management-react-js-z3gu.vercel.app', // Allow requests from this origin
     credentials: true, // Allow sending cookies from the frontend
   });
 
