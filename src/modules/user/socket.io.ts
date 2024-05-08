@@ -43,15 +43,13 @@ export class WebsocketGateway {
 
   @SubscribeMessage("userAccepted")
   handleUserAccepted(client: Socket, user: User): void {
-    console.log(" xdddddd : ",client);
+    
 
     user.statusAccount = 1;
     user.verifiedAccount = true;
 
     console.log(user);
-    if(this.users){
 
-      if(this.users.find(u => u.id == user.id)) {
 
         user.socketid=this.users.find(u => u.id == user.id).socketid
         console.log(user)
@@ -59,8 +57,6 @@ export class WebsocketGateway {
         this.userService.acceptUser(user.id);
         this.mailService.sendUserAcceptance(user)
         console.log(`User ${user.name} (${user.id}) accepted`)
-      }
-    }
 
   }
 
