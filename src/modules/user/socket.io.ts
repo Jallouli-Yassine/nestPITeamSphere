@@ -30,6 +30,7 @@ export class WebsocketGateway {
 
   @SubscribeMessage("Connect")
   handleConnect(client: Socket, user: User): void {
+    console.log("dehgehehe : ",client);
     user.socketid = client.id;
     if(this.users){
       if(this.users.find(u => u.id == user.id)) {
